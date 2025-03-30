@@ -13,7 +13,7 @@ const Checkout = ({ route }) => {
 
     const placeOrder = () => {
         Alert.alert("Success", "Order Placed Successfully", [{ text: "OK", onPress: () => {
-            navigation.replace("Home")
+            navigation.navigate("Home")
             setCart([])
         } }])
     };
@@ -21,7 +21,8 @@ const Checkout = ({ route }) => {
     const customerAddres= ["Kalyan Nagar, Bengaluru, 560043", "Babusapalay, Bengaluru, 560042", "Flower Garden, Bengaluru, 560048"]
     const paymentType=["COD", "Online"]
     return (
-        <View style={{ margin:50,}}>
+        <View style={{paddingTop:"8%",marginRight:"2%",marginLeft:"2%"}}>
+            
             <Text style={{ fontSize: 20, fontWeight: "bold", textAlign: "center" }}>Order Summary</Text>
 
             <FlatList
@@ -37,7 +38,7 @@ const Checkout = ({ route }) => {
                     </Card>
                 )}
                ListFooterComponent={()=>(
-                <View style={{marginBottom:50}}>
+                <View style={{marginBottom:80}}>
                      <Text style={{ fontSize: 18, fontWeight: "bold", marginTop: 10 }}>Select Address:</Text>
             <RadioButton.Group onValueChange={setAddress} value={address}>
                 {customerAddres.map((addr) => (

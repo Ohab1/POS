@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { View, FlatList, Image, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, FlatList, Image, Text, TouchableOpacity, StyleSheet, SafeAreaView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import CartImage from "../assets/cart.png";
 import Context from "../context/context";
@@ -15,7 +15,7 @@ const Home = () => {
     };
 
     return (
-        <View style={{ flex: 1,margin:10,marginBottom:40}}>
+        <SafeAreaView style={{ flex: 1,paddingTop:"8%" }}>
             <View style={styles.header}>
                 <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>POS</Text>
                 <TouchableOpacity onPress={() => navigation.navigate("Cart", { cart })} style={styles.cart}>
@@ -46,14 +46,14 @@ const Home = () => {
                     </View>
                 )}}
             />
-        </View>
+      </SafeAreaView>
     );
 };
 
 export default Home;
 
 const styles = StyleSheet.create({
-    header: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", backgroundColor: "orange", padding: 10 ,borderRadius:10,marginTop:"10%"},
+    header: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", backgroundColor: "orange", padding: 10 ,borderRadius:10,marginRight:"2%",marginLeft:"2%"},
     cart: { flexDirection: "row", alignItems: "center", backgroundColor: "white", padding: 10, borderRadius: 10, },
     icon: { width: 30, height: 30 },
     card: { flexDirection: "row", padding: 10, alignItems: "center", backgroundColor: "white",borderRadius:8,margin:10 },

@@ -16,7 +16,7 @@ const Cart = () => {
  
 
     return (
-        <View style={{ marginTop: 50 }}>
+        <View style={{paddingTop:"8%" }} >
             <FlatList
                 data={cart}
                 keyExtractor={(item) => item.id.toString()}
@@ -55,8 +55,8 @@ export default Cart;
 
 const styles = StyleSheet.create({
 
-    card: { flexDirection: "row", justifyContent: "space-around", padding: 20, margin: 20, borderRadius: 10, backgroundColor: "white" },
-    image: { height: 100, width: 100 },
+    card: { flexDirection: "row", justifyContent: "space-around", padding: 20, margin: 10, borderRadius: 10, backgroundColor: "white" },
+    image: { height: 150, width: 150 },
     text: { fontSize: 18, fontWeight: "bold" },
     button: { backgroundColor: "red", padding: 10, marginTop: 10, borderRadius: 5, justifyContent: "center", alignItems: "center" },
     buttonText: { color: "#fff", fontWeight: "bold" },

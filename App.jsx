@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StatusBar, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import Login from './src/auth/Login'
 import {  NavigationContainer } from '@react-navigation/native'
@@ -13,8 +13,8 @@ const Stack=createNativeStackNavigator()
 const App = () => {
   const [cart, setCart]=useState([])
   return (
-
       <NavigationContainer>
+        <StatusBar barStyle="dark-content"/>
         <Context.Provider value={{cart,setCart}}>
         <Stack.Navigator initialRouteName='Login'>
           <Stack.Screen name='Login'  component={Login} options={{headerShown:false}} />
@@ -23,8 +23,7 @@ const App = () => {
           <Stack.Screen name='Checkout'  component={Checkout} options={{headerShown:false}} />
         </Stack.Navigator>
         </Context.Provider>
-      </NavigationContainer>
- 
+      </NavigationContainer> 
   )
 }
 
